@@ -37,7 +37,8 @@ describe("ShopList", () => {
     });
 
     render(<ShopList />);
-    expect(screen.getByTestId("shop-list-skeleton")).toBeInTheDocument();
+    const skeletonItems = screen.getAllByTestId("shop-list-skeleton");
+    expect(skeletonItems).toHaveLength(3);
   });
 
   it("shows error message when there is an error", () => {
